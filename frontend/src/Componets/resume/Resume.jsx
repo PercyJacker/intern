@@ -1,9 +1,11 @@
 import React, { useState, useCallback, useRef } from 'react';
 import { toPng } from 'html-to-image';
 import './resume.css';
-import CertificateTemp from '/Users/percyjacker/nullclass/linkedin/internshala-/frontend/src/Assets/images/Certificate.png';
 import html2canvas from 'html2canvas';
 import axios from 'axios';
+import CertificateTemp from '../Assets/images/Certificate.png'
+
+
 
 const Resume = () => {
   const ref = useRef(null);
@@ -177,7 +179,7 @@ const Resume = () => {
 )}
 
         </div>
-        <div className="absolute bottom-[135vh] left-[25vw]">
+        <div className="absolute bottom-[150vh] left-[25vw]">
           <input
             type="file"
             accept="image/*"

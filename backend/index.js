@@ -176,7 +176,7 @@ app.post('/api/verify-otp', (req, res) => {
     const now = moment().tz("Asia/Kolkata"); // Get current time in IST
     console.log(`Current time (IST): ${now.format('YYYY-MM-DD HH:mm:ss')}`); // Log current time in IST
 
-    const startTime = moment().tz("Asia/Kolkata").set({ hour: 7, minute: 0, second: 0 }); // 2 PM IST
+    const startTime = moment().tz("Asia/Kolkata").set({ hour: 14, minute: 0, second: 0 }); // 2 PM IST
     const endTime = moment().tz("Asia/Kolkata").set({ hour: 19, minute: 0, second: 0 }); // 7 PM IST
   
     return now.isBetween(startTime, endTime, null, '[)');
@@ -247,7 +247,7 @@ app.get('/api/get-videos', (req, res) => {
   
       // Create a new order with Razorpay
       const order = await instance.orders.create({
-        amount: 500, // Convert amount to smallest currency unit (paise)
+        amount: 5000, // Convert amount to smallest currency unit (paise)
         currency: "INR",
       });
   
