@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useRef } from 'react';
 import { toPng } from 'html-to-image';
 import './resume.css';
-import CertificateTemp from '/Users/percyjacker/nullclass/linkedin/internshala-/frontend/src/Assets/Certificate.png';
+import CertificateTemp from '/Users/percyjacker/nullclass/linkedin/internshala-/frontend/src/Assets/images/Certificate.png';
 import html2canvas from 'html2canvas';
 import axios from 'axios';
 
@@ -156,28 +156,28 @@ const Resume = () => {
           className="w-full h-auto"
         />
         <div className="absolute inset-0">
-          <h1 className="absolute text-xl font-bold text-gray-800" style={{ top: "25%", left: "10%" }}>
+          <h1 className="absolute text-xl font-bold text-gray-800" style={{ top: "24%", left: "10%" }}>
             {name}
           </h1>
-          <p className="absolute text-lg text-gray-600" style={{ top: "30%", left: "10%" }}>
+          <p className="absolute text-lg text-gray-600" style={{ top: "26.8%", left: "16%" }}>
             {qualification}
           </p>
-          <p className="absolute text-lg text-gray-600" style={{ top: "35%", left: "10%" }}>
+          <p className="absolute text-lg text-gray-600" style={{ top: "29.5%", left: "15%" }}>
             {experience}
           </p>
-          <p className="absolute text-lg text-gray-600" style={{ top: "40%", left: "10%" }}>
+          <p className="absolute text-lg text-gray-600" style={{ top: "32.2%", left: "17%" }}>
             {personal}
           </p>
-          {photo && (
-            <img
-              src={photo}
-              alt="Uploaded"
-              className="absolute w-32 h-32 object-cover rounded-full"
-              style={{ top: "10%", left: "70%" }}
-            />
-          )}
+        {photo && (
+  <img
+    src={photo}
+    alt="Uploaded"
+    className="photo-style absolute w-32 h-32 object-cover "
+  />
+)}
+
         </div>
-        <div className="absolute bottom-4 left-10">
+        <div className="absolute bottom-[135vh] left-[25vw]">
           <input
             type="file"
             accept="image/*"

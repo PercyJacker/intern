@@ -22,7 +22,7 @@
 
 .name {
     position: absolute;
-    top: -215px; /* Adjust vertical position */
+    top: -115px; /* Adjust vertical position */
     left: -68px; /* Adjust horizontal position */
     font-size: 20px;
     color: #000;
@@ -50,7 +50,7 @@
     position: absolute;
     white-space: nowrap; /* Prevent text from wrapping */
 
-    top: -122px; /* Adjust vertical position */
+    top: -150px; /* Adjust vertical position */
     left: -20px; /* Adjust horizontal position */
     font-size: 20px;
     color: #333;
@@ -74,4 +74,12 @@
     height: 128px;
     border-radius: 0%;
   }
+
+  .photo-style {
+    top: 3%; /* Adjust this value */
+    left: 8%; /* Adjust this value */
+    position: absolute; /* Ensure absolute positioning */
+  }
+  
+  
   
