@@ -1,24 +1,38 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import {getAuth,GoogleAuthProvider} from 'firebase/auth'
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth, GoogleAuthProvider, sendSignInLinkToEmail } from "firebase/auth";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA1KqL_6dZxdSrmne8-lEktLjAauc3JoBo",
-  authDomain: "internarea-9f3ee.firebaseapp.com",
-  projectId: "internarea-9f3ee",
-  storageBucket: "internarea-9f3ee.appspot.com",
-  messagingSenderId: "394243308686",
-  appId: "1:394243308686:web:deeb5322eaf1651c321ddf",
-  measurementId: "G-WLZZD3TMX8"
+  apiKey: "AIzaSyDW9r5FsaTAjcQaC48yEf_yDlTNNDdjY2c",
+  authDomain: "test2-172a5.firebaseapp.com",
+  databaseURL: "https://test2-172a5-default-rtdb.firebaseio.com",
+  projectId: "test2-172a5",
+  storageBucket: "test2-172a5.appspot.com",
+  messagingSenderId: "489578859973",
+  appId: "1:489578859973:web:d762f8afc3ddaf689dcfac",
+  measurementId: "G-5S2D14B6WP",
 };
-
+// sendSignInLinkToEmail(getAuth, email, actionCodeSettings)
+//   .then(() => {
+//     // The link was successfully sent. Inform the user.
+//     // Save the email locally so you don't need to ask the user for it again
+//     // if they open the link on the same device.
+//     window.localStorage.setItem('emailForSignIn', email);
+//     // ...
+//   })
+//   .catch((error) => {
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     // ...
+//   });
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth=getAuth(app);
-const provider=new GoogleAuthProvider();
-export {auth,provider}
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+// Debugging
+console.log("Firebase Auth Object:", auth);
+console.log("Google Auth Provider:", provider);
+
+export { auth, provider };

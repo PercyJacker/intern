@@ -12,29 +12,30 @@ function Register() {
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
   let navigate=useNavigate()
-  const handleSingin=()=>{
-    signInWithPopup(auth,provider).then((res)=>{
-      console.log(res)
-     
-      navigate("/")
-    
-  }).catch((err)=>{
-      console.log(err)
-  })
-  toast("Login Success")
-  }
-  const setTrueForStudent=()=>{
-    setStudent(false)
-}
-const setFalseForStudent=()=>{
-    setStudent(true)
-}
-  const showLogin=()=>{
-    setDivVisible(true)
-}
-const closeLogin=()=>{
-    setDivVisible(false)
-}
+  const handleSingin = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      console.log(result); // Log user details for debugging
+      toast.success('Login Success');
+      navigate('/'); // Navigate to the desired route
+    } catch (error) {
+      console.error('Error during sign-in:', error);
+      toast.error('Failed to sign in. Please try again.');
+    }
+  };
+  const setTrueForStudent = () => {
+    setStudent(false);
+  };
+  const setFalseForStudent = () => {
+    setStudent(true);
+  };
+  const showLogin = () => {
+    setDivVisible(true);
+  };
+  const closeLogin = () => {
+    setDivVisible(false);
+  };
+
   return (
     <div>
       <div className="form">
