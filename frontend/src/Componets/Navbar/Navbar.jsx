@@ -11,6 +11,19 @@ import { useNavigate } from 'react-router-dom'
 function Navbar() {
     const navigate=useNavigate()
 const user=useSelector(selectUser)
+// const profileClass = isDivVisibleForProfile ? 'bi bi-caret-up-fill' : 'bi bi-caret-down-fill';
+// const [dropdownVisibility, setDropdownVisibility] = useState({
+//     internships: false,
+//     jobs: false,
+//     profile: false,
+//     login: false
+// });
+// const toggleDropdown = (key) => {
+//     setDropdownVisibility((prev) => ({
+//         ...prev,
+//         [key]: !prev[key],
+//     }));
+// };
     const [isDivVisibleForintern,setDivVisibleForintern]=useState(false)
     const [isDivVisibleForJob,setDivVisibleFroJob]=useState(false)
     const [isDivVisibleForlogin,setDivVisibleFrologin]=useState(false)
@@ -80,9 +93,16 @@ const user=useSelector(selectUser)
       <Link to={"/"}><img src={logo} alt="" srcset="" /></Link>  
     </div>
     <div className="elem">
-     <Link to={"/Internship"}>   <p id='int' className='' onMouseEnter={showInternShips} > Internships  <i onClick={hideInternShips}  id='ico' class="bi bi-caret-down-fill"></i></p></Link>
+     <Link to={"/Internship"}>   <p id='int' className='' onMouseEnter={showInternShips} > Internships  <i onClick={hideInternShips}  id='ico' class="bi bi-caret-down-fill"></i></p>
+</Link>
        <Link to={"/Jobs"}> <p onMouseEnter={showJobs} >Jobs  <i class="bi bi-caret-down-fill" id='ico2' onClick={hideJobs}></i></p></Link>
+       <Link to={"/verifyOTP"} class=' video '>upload video</Link>
+       <Link to={"/resume"} class="resume">
+  Get resume
+</Link>
+
     </div>
+    
     <div className="search">
     <i class="bi bi-search"></i>
         <input type="text" placeholder='Search' />
@@ -285,7 +305,7 @@ Hire Talent
 
     }
 </div>
-    <Sidebar/>
+    {/* <Sidebar/> */}
     </div>
   )
 }

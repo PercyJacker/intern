@@ -1,276 +1,177 @@
-*{
+/* Reset styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-img{
+
+img {
     width: 120px;
 }
-nav{
+
+nav {
     width: 100%;
     background-color: #fff;
     box-shadow: 0px 0px 5px -2px black;
     overflow: hidden;
 }
-ul{
-    display: flex;
+
+.video {
+    margin-top: 25px;
 }
-.elem{
+
+ul {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: space-between; /* Ensures proper alignment */
+    padding: 10px;
+}
+
+.elem {
     display: flex;
     margin-left: 34px;
     justify-content: space-between;
+    flex-wrap: wrap; /* Wrap items on smaller screens */
 }
-ul p{
+
+ul p {
     margin: 30px;
     color: black;
 }
-.search{
+
+.search {
     position: relative;
-    left: 34%;
-    margin-top: 15px;
+    margin: 15px auto;
+    text-align: center;
 }
-.search i{
+
+.search i {
     font-size: 20px;
     font-weight: 200;
 }
-.search input{
-    margin-left: 10px;
+
+.search input {
     font-size: 15px;
-    padding: 12px 2px ;
-    width: 100px;
+    padding: 12px 2px;
+    width: 100%;
+    max-width: 200px;
     color: black;
-    border: none;
-    outline: one;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
 }
-.auth{
-    position: relative;
-    left: 33%;
-    margin-top: 1.5rem;
+
+.auth {
+    margin: 1.5rem auto;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
-.btn1{
+
+.btn1, .btn2 {
     color: #078edd;
     outline: #078edd 2px solid;
     border: none;
-    width: 60px;
-    margin-right: -52px;
-    height: 25px;
+    width: 100px;
+    margin: 5px;
+    height: 30px;
     font-size: 16px;
-    border-radius: 2px;
-}
-.btn2{
-    color: white;
-    outline: #078edd 2px solid;
-    background-color: #078edd;
-    border: none;
-    width: 70px;
-       margin-left: 78px;
-    height: 25px;
-    font-size: 16px;
-    border-radius: 2px;
+    border-radius: 4px;
+    text-align: center;
 }
 
-.hire{
-    position: relative;
-    left: 33%;
-justify-content: center;
-margin-top: 20px;
-height: 30px;
-margin-left: 23px;
-font-weight: 500;
+.btn2 {
+    background-color: #078edd;
+    color: white;
+}
+
+.hire, .admin {
+    margin: 20px auto;
+    text-align: center;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-.admin{
-    position: relative;
-    left: 36%;
-    margin-top: 18px;
-}
-.admin button{
+
+.admin button {
     color: white;
     outline: #078edd 2px solid;
     background-color: #078edd;
     border: none;
-    width: 70px;
-       margin-left: 78px;
-    height: 25px;
+    width: 100px;
+    margin: 5px;
+    height: 30px;
     font-size: 16px;
-    border-radius: 2px;
+    border-radius: 4px;
 }
-#bt{
-  color: white;
-  outline: #078edd 2px solid;
-  background-color: #078edd;
-  border: none;
-  width: 70px;
-  margin-left: 49rem;
-  height: 25px;
-  font-size: 16px;
-  margin-top: 18px;
-  border-radius: 2px;
-}
-@media screen and (max-width: 768px) {
-    .nav1{
-     display: none;
+
+.resume {
+    position: relative;
+    top: 25px; /* Adjust this value to bring it down */
+    left:10px
+  }
+
+/* For smaller screens (tablets and mobiles) */
+@media screen and (max-width: 1024px) {
+    .elem {
+        flex-direction: column;
+        margin-left: 0;
     }
-   }
- 
-   #cross{
-    position: relative;
-    left: 90%;
-    font-size: 34px;
+
+    ul p {
+        margin: 10px;
+        font-size: 14px;
+    }
+
+    .search {
+        margin: 15px 0;
+    }
+
+    .auth {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
-.login{
-    box-shadow: 0px 0px 5px -2px black;
+@media screen and (max-width: 768px) {
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search {
+        width: 90%;
+    }
+
+    .btn1, .btn2 {
+        width: 80px;
+        font-size: 14px;
+    }
+
+    img {
+        width: 80px;
+    }
 }
 
-.location{
-    top: 6rem;
-    left: 14%;
-    position: absolute;
+@media screen and (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+    }
 
-  }
-  #ico3{
-    position: absolute;
-    top: 38%;
-    left: 23rem;
-  }
-  .Profile{
-    top: 0rem;
-    left: 61%;
-    position: absolute;
-  }
-  .catogry{
-    top: 6rem;
-    left: 14%;
-    position: absolute;
-    z-index: 1;
-  }
-  .Explore{
-    top: 6rem;
-    left: 14%;
-    position: absolute;
-  }
-  .catogry2{
-    top: 1rem;
-    left: 14%;
-    position: absolute;
-  }
-  .location2{
-    top: -8rem;
-    left: 50%;
-  position: relative;
+    .elem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-  }
- 
-  .jobs{
-    position: relative;
-    top: 0%;
-    left: 24rem;
-  }
-  #more{
-    top: 1rem;
-    left: 14%;
-    position: absolute;
-  }
+    .auth {
+        flex-direction: column;
+        width: 100%;
+    }
 
-  /*  For Login */
-#loginClose{
-  left: 92%;
-  top: 0%;
-  position: absolute;
-}
-.login{
-  width: 35%;
-  position: absolute;
-  left: 33%;
-  z-index: 1;
-  background-color: #ffff;
-  top: 20%;
-  box-shadow:  0px 0px 5px -2px #078edd;
-}
-#intershipColo{
-  margin-top: -16px;
-  z-index: 1;
-}
-#jobsDrop{
-left: 22%;
-  z-index: -1;
-}
-.logout{
-  position: relative;
-  width: 100px;
-  left: 575%;
-  top: -8px;
-
-}
-#picpro{
- 
-  position: relative;
-  left: 666%;
-  top: 8px;
-}
-#ico2{
-  top: 31%;
-  position: relative;
-  left: -7%;
-}
-#ico{
-  top: 31%;
-  position: relative;
-  left: -7%;
-}
-.proName{
-  position: relative;
-  font-weight: bold;
-  left: 767%;
-  top: -28px 
-}
-
-.profile-dropdown{
-  position: absolute;
-  top: 10%;
-  left: 126%;
-  background: white;
-  height: 250px;
-  z-index: 1;
-}
-.profile-dropdown-2{
-  position: absolute;
-  top: 11%;
-  left: 10%;
-  background: white;
-  width: 30%;
-  height: 60%;
-  z-index: 1;;
-  display: flex;
-  justify-content: space-around;
-}
-.profile-dropdown-2 p{
-  margin-left: 6px;
-  margin-top: 4px;
-  margin-right: 3px;
-
-}
-.profile-dropdown-1 p{
-  margin-left: 6px;
-  margin-top: 4px;
-  margin-right: 3px;
-
-}
-.profile-dropdown-1{
-  position: absolute;
-  top: 10%;
-  left: 24%;
-  background: white;
-width: 30%;
-  height: 60%;
-  z-index: 1;
-  display: flex;
-  justify-content: space-around;
-}
-
-.line{
-  width: 0.5px;
-
+    .btn1, .btn2 {
+        width: 100%;
+        margin: 5px 0;
+    }
 }

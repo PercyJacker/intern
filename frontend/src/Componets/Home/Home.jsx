@@ -132,6 +132,7 @@ View details <i class="bi bi-chevron-right"></i>
 </div>
     </div>
 <Job/>
+<button>video upload</button>
 
 <hr />
 <div className="analytics mt-8 flex flex-wrap justify-center items-center text-center">

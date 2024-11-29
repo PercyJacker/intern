@@ -2,7 +2,7 @@ import './App.css';
 import Footer from './Componets/Footerr/Footer';
 import Home from './Componets/Home/Home';
 import Navbar from './Componets/Navbar/Navbar';
-import { Routes,Route } from 'react-router-dom';
+import { Routes,Route, useNavigate } from 'react-router-dom';
 import Register from './Componets/auth/Register';
 import Intern from "./Componets/Internships/Intern"
 import JobAvl from "./Componets/Job/JobAvl"
@@ -20,7 +20,13 @@ import Postinternships from './Admin/Postinternships';
 import DeatilApplication from './Applications/DeatilApplication';
 import UserApplicatiom from './profile/UserApplicatiom';
 import UserapplicationDetail from "./Applications/DeatilApplicationUser"
+import VerifyOTP from './Componets/OTP/VerifyOTP.jsx';
+import VideoUpload from './Componets/videoUpload/VideoUpload.jsx'
+import Resume from './Componets/resume/Resume.jsx';
+import Payment from './Componets/payment/Payment.jsx';
+
 function App() {
+  const navigate = useNavigate();
   const user=useSelector(selectUser);
   const dispatch=useDispatch();
   useEffect(() => {
@@ -40,6 +46,12 @@ function App() {
         }
     })
     },[dispatch] );
+    // useEffect(() => {
+    //   // Assuming you want to redirect after 3 seconds
+    //   setTimeout(() => {
+    //     navigate('/uploadvideo');
+    //   }, 3000); // 3 seconds
+    // }, [navigate]);
   return (
     <div className="App">
 <Navbar/>
@@ -61,6 +73,15 @@ function App() {
 <Route path='/applications' element={<ViewAllApplication/>}/>
 <Route path='/UserapplicationDetail' element={< UserapplicationDetail/>}/>
 <Route path='/userapplication' element={<UserApplicatiom/>}/>
+<Route path='/uploadvideo' element={<VideoUpload/>}/>
+<Route path='/verifyOTP' element={<VerifyOTP/>}/>
+<Route path='/resume' element={<Resume/>}/>
+
+
+
+
+
+
 </Routes>
 <Footer/>
     </div>

@@ -1,0 +1,77 @@
+.container{
+    height : 100%;
+    width : 100%;
+    /* background-color : red; */
+    position : relative;
+}
+
+.content{
+    position : absolute;
+    top : 0;
+    height : 100%;
+    width :100;
+    top : 59.5vh;
+    left : 11vw;
+    /* background-color : blue; */
+
+}
+
+.content{
+    text-color : red;
+}
+
+.name {
+    position: absolute;
+    top: -215px; /* Adjust vertical position */
+    left: -68px; /* Adjust horizontal position */
+    font-size: 20px;
+    color: #000;
+  }
+
+  .qualification {
+    position: absolute;
+    top: -180px; /* Adjust vertical position */
+    left: -25px; /* Adjust horizontal position */
+    font-size: 20px;
+    color: #333;
+  }
+
+  .experience {
+    position: absolute;
+    white-space: nowrap; /* Prevent text from wrapping */
+
+    top: -151px; /* Adjust vertical position */
+    left: -29px; /* Adjust horizontal position */
+    font-size: 20px;
+    color: #333;
+  }
+
+  .personal {
+    position: absolute;
+    white-space: nowrap; /* Prevent text from wrapping */
+
+    top: -122px; /* Adjust vertical position */
+    left: -20px; /* Adjust horizontal position */
+    font-size: 20px;
+    color: #333;
+  }
+
+  .upload-input {
+    top: -150px; /* Adjust photo vertical position */
+
+    padding: -15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .uploaded-photo {
+    position: absolute;
+    top: -450px; /* Adjust photo vertical position */
+    left: -95px; /* Adjust photo horizontal position */
+    width: 128px;
+    height: 128px;
+    border-radius: 0%;
+  }
+  
