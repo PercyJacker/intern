@@ -9,17 +9,11 @@ const VerifyOTP = () => {
   const handleRequestOTP = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await axios.post('http://localhost:4000/api/send-otp', {
-        email,
-      });
-      alert(response.data); // Show success message
-      setShowVerifyForm(true); // Show the OTP verification form
-    } catch (err) {
-      console.error(err);
-      alert(err.response?.data || 'Error sending OTP');
-    }
-  };
+    const backendURL = "https://nullclass-j711.vercel.app";
+    axios.post(`${backendURL}/api/send-otp`, { email })
+      .then(response => console.log(response))
+      .catch(error => console.error(error));
+  }
   return (
     <div>VerifyOTP
          {!showVerifyForm ? (
