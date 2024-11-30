@@ -235,8 +235,8 @@ app.get('/api/get-videos', (req, res) => {
   console.log(path.join(__dirname,'..', 'frontend', 'build', 'index.html'));
 
   module.exports.instance = new Razorpay({
-    key_id:rzp_test_Deninu7Q3ty8Yq,
-    key_secret: vL9QQc98uViOH5HCZSimYOs8,
+    key_id:"rzp_test_Deninu7Q3ty8Yq",
+    key_secret: "vL9QQc98uViOH5HCZSimYOs8",
     headers: {
       "X-Razorpay-Account": "<merchant_account_id>"
     },
@@ -247,8 +247,8 @@ app.get('/api/get-videos', (req, res) => {
     try {
       // Initialize Razorpay instance
       const instance = new Razorpay({
-        key_id:rzp_test_Deninu7Q3ty8Yq,
-        key_secret:vL9QQc98uViOH5HCZSimYOs8,
+        key_id:"rzp_test_Deninu7Q3ty8Yq",
+        key_secret:"vL9QQc98uViOH5HCZSimYOs8",
       });
   
       // Create a new order with Razorpay
@@ -286,7 +286,7 @@ app.get('/api/get-videos', (req, res) => {
         const body = razorpay_order_id + "|" + razorpay_payment_id;
     
         const expectedSignature = crypto
-          .createHmac("sha256", vL9QQc98uViOH5HCZSimYOs8)
+          .createHmac("sha256", "vL9QQc98uViOH5HCZSimYOs8")
           .update(body.toString())
           .digest("hex");
     
@@ -303,7 +303,7 @@ app.get('/api/get-videos', (req, res) => {
       }
     });
   })
-  app.get("/api/getkey",(req, res)=>res.status(200).json({key:rzp_test_Deninu7Q3ty8Yq}))
+  app.get("/api/getkey",(req, res)=>res.status(200).json({key:"rzp_test_Deninu7Q3ty8Yq"}))
 
     // Start the server
 
