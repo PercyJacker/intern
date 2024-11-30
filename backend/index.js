@@ -47,15 +47,15 @@ app.get("/",(req,res)=>{
 })
 app.use("/api",router)
 connectDB();
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://intern-azure.vercel.app"); // Allow specific frontend
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    if (req.method === "OPTIONS") {
-        return res.status(200).end(); // Handle preflight request
-    }
-    next(); // Proceed with the actual request
-});
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "https://intern-azure.vercel.app"); // Allow specific frontend
+//     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+//     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+//     if (req.method === "OPTIONS") {
+//         return res.status(200).end(); // Handle preflight request
+//     }
+//     next(); // Proceed with the actual request
+// });
 
 
 
