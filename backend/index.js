@@ -48,18 +48,15 @@ app.get("/",(req,res)=>{
 app.use("/api",router)
 connectDB();
 app.use((req, res, next) => {
-    // Set the Access-Control-Allow-Origin header for both request and response
-    res.header("Access-Control-Allow-Origin", "*"); // Allow all origins
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH, OPTIONS"); // Allow necessary HTTP methods
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization"); // Allow necessary headers
-    
-    // For preflight requests (OPTIONS method), respond quickly
+    res.header("Access-Control-Allow-Origin", "https://intern-azure.vercel.app"); // Allow specific frontend
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
     if (req.method === "OPTIONS") {
-        return res.status(200).end();
+        return res.status(200).end(); // Handle preflight request
     }
-    
-    next(); // Proceed with the request handling
+    next(); // Proceed with the actual request
 });
+
 
 
  let otpStore = {};
