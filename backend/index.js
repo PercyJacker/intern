@@ -26,7 +26,7 @@ ffmpeg.setFfmpegPath(ffmpegPath);
 
 app.use(cors({
 
-  origin:[ "https://intern-azure.vercel.app/"], // Vercel domain of your frontend
+  origin:[ "https://intern-azure.vercel.app"], // Vercel domain of your frontend
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 credentials: true
