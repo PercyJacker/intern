@@ -234,13 +234,11 @@ app.get('/api/get-videos', (req, res) => {
 
   console.log(path.join(__dirname,'..', 'frontend', 'build', 'index.html'));
 
-  module.exports.instance = new Razorpay({
-    key_id:"rzp_test_Deninu7Q3ty8Yq",
-    key_secret: "vL9QQc98uViOH5HCZSimYOs8",
-    headers: {
-      "X-Razorpay-Account": "<merchant_account_id>"
-    },
-  });
+
+module.exports.instance = new Razorpay({
+  key_id: "rzp_test_Deninu7Q3ty8Yq",
+  key_secret: "vL9QQc98uViOH5HCZSimYOs8",
+});
 
 
   app.post('/api/checkout',async(req,res)=>{
