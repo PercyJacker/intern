@@ -306,12 +306,8 @@ console.log("Key Secret:", process.env.KEY_SECRET);
   app.get("/api/getkey",(req, res)=>res.status(200).json({key:process.env.API_KEY}))
 
     // Start the server
-<<<<<<< HEAD
+
     // app.listen(port, () => {
     //   console.log(`Server is running on port ${port}`);
     // })
-=======
-    app.listen(port, () => {
-      console.log(`Server is running on port ${port}`);
-    })
->>>>>>> 891d01e3e3247c3d00711ea6d0efdfbe416f2a7a
+
