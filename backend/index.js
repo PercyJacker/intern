@@ -247,8 +247,8 @@ app.get('/api/get-videos', (req, res) => {
     try {
       // Initialize Razorpay instance
       const instance = new Razorpay({
-        key_id: process.env.API_KEY,
-        key_secret: process.env.KEY_SECRET,
+        key_id:rzp_test_Deninu7Q3ty8Yq,
+        key_secret:vL9QQc98uViOH5HCZSimYOs8,
       });
   
       // Create a new order with Razorpay
