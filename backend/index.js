@@ -25,16 +25,12 @@ ffmpeg.setFfmpegPath(ffmpegPath);
 
 
 app.use(cors({
-<<<<<<< HEAD
-  origin: ["https://your-frontend-domain.vercel.app"], // Add the frontend domain
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type"],
-=======
+
   origin:[ "https://intern-azure.vercel.app/"], // Vercel domain of your frontend
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 credentials: true
->>>>>>> 891d01e3e3247c3d00711ea6d0efdfbe416f2a7a
+
 }));
 app.use(bodyParser.json({limit:"50mb"}))
 app.use(bodyParser.urlencoded({extended:true,limit:"50mb"}))
