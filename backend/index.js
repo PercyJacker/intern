@@ -24,8 +24,12 @@ require('dotenv').config();
 ffmpeg.setFfmpegPath(ffmpegPath);
 
 
-app.use(cors())
-
+app.use(cors({
+  origin:[ "https://intern-azure.vercel.app/"], // Vercel domain of your frontend
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+credentials: true
+}));
 app.use(bodyParser.json({limit:"50mb"}))
 app.use(bodyParser.urlencoded({extended:true,limit:"50mb"}))
 app.use(express.json())
