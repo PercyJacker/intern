@@ -24,8 +24,11 @@ require('dotenv').config();
 ffmpeg.setFfmpegPath(ffmpegPath);
 
 
-app.use(cors())
-
+app.use(cors({
+  origin: ["https://your-frontend-domain.vercel.app"], // Add the frontend domain
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+}));
 app.use(bodyParser.json({limit:"50mb"}))
 app.use(bodyParser.urlencoded({extended:true,limit:"50mb"}))
 app.use(express.json())
@@ -300,6 +303,6 @@ console.log("Key Secret:", process.env.KEY_SECRET);
   app.get("/api/getkey",(req, res)=>res.status(200).json({key:process.env.API_KEY}))
 
     // Start the server
-    app.listen(port, () => {
-      console.log(`Server is running on port ${port}`);
-    })
+    // app.listen(port, () => {
+    //   console.log(`Server is running on port ${port}`);
+    // })
