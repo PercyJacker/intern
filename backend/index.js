@@ -151,17 +151,17 @@ app.post('/api/verify-otp', (req, res) => {
     
 // });
   
-//   // Catch-all route to handle other frontend routes
-//   app.get('*', (req, res) => {
-//     // Make sure res is not undefined and send the file correctly
-//     res.sendFile(path.join(buildPath, 'index.html'), (err) => {
-//       if (err) {
-//         // Handle any errors while serving the file
-//         console.log('Error serving index.html:', err);
-//         res.status(500).send('Something went wrong!');
-//       }
-//     });
-//   });
+  // Catch-all route to handle other frontend routes
+  app.get('*', (req, res) => {
+    // Make sure res is not undefined and send the file correctly
+    res.sendFile(path.join(buildPath, 'index.html'), (err) => {
+      if (err) {
+        // Handle any errors while serving the file
+        console.log('Error serving index.html:', err);
+        res.status(500).send('Something went wrong!');
+      }
+    });
+  });
   
   
   
@@ -235,8 +235,8 @@ app.get('/api/get-videos', (req, res) => {
   console.log(path.join(__dirname,'..', 'frontend', 'build', 'index.html'));
 
   module.exports.instance = new Razorpay({
-    key_id: process.env.API_KEY,
-    key_secret: process.env.KEY_SECRET,
+    key_id:rzp_test_Deninu7Q3ty8Yq,
+    key_secret: vL9QQc98uViOH5HCZSimYOs8,
     headers: {
       "X-Razorpay-Account": "<merchant_account_id>"
     },
@@ -262,8 +262,8 @@ app.get('/api/get-videos', (req, res) => {
         success: true,
         order,
       });
-      console.log("API Key:", process.env.API_KEY);
-console.log("Key Secret:", process.env.KEY_SECRET);
+//       console.log("API Key:", process.env.API_KEY);
+// console.log("Key Secret:", vL9QQc98uViOH5HCZSimYOs8);
     } catch (error) {
       // Log the error for debugging purposes
       console.error("Error in Razorpay order creation:", error);
@@ -286,7 +286,7 @@ console.log("Key Secret:", process.env.KEY_SECRET);
         const body = razorpay_order_id + "|" + razorpay_payment_id;
     
         const expectedSignature = crypto
-          .createHmac("sha256", process.env.KEY_SECRET)
+          .createHmac("sha256", vL9QQc98uViOH5HCZSimYOs8)
           .update(body.toString())
           .digest("hex");
     
@@ -303,7 +303,7 @@ console.log("Key Secret:", process.env.KEY_SECRET);
       }
     });
   })
-  app.get("/api/getkey",(req, res)=>res.status(200).json({key:process.env.API_KEY}))
+  app.get("/api/getkey",(req, res)=>res.status(200).json({key:rzp_test_Deninu7Q3ty8Yq}))
 
     // Start the server
 
