@@ -6,13 +6,19 @@ const VerifyOTP = () => {
     const [email, setEmail] = useState('');
   const [showVerifyForm, setShowVerifyForm] = useState(false);
 
-  // const handleRequestOTP = async (e) => {
-  //   e.preventDefault();
-  //   const backendURL = "https://intern-8hmo.vercel.app";
-  // axios.post('https://intern-8hmo.vercel.app/api/send-otp', { email })
-  // .then(response => console.log(response))
-  // .catch(error => console.error(error));
-  // };
+  const handleRequestOTP = async (e) => {
+    e.preventDefault();
+    const backendURL = "https://intern-8hmo.vercel.app";
+  axios.post('https://intern-8hmo.vercel.app/api/send-otp', { email })
+  .then(response => {
+      alert(response.data);
+    setShowVerifyForm(true);
+        console.log(response);
+
+
+  })
+  .catch(error => console.error(error));
+  };
 
       const handleRequestOTP = async (e) => {
     e.preventDefault();
