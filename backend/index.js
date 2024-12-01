@@ -306,13 +306,14 @@ module.exports.instance = new Razorpay({
     });
   })
   app.get("/api/getkey",(req, res)=>res.status(200).json({key:"rzp_test_Deninu7Q3ty8Yq"}))
+module.exports = app;
 
     // Start the server
 
     // app.listen(port, () => {
     //   console.log(`Server is running on port ${port}`);
     // })
-export default function handler(req, res) {
-  res.status(200).json({ message: "Hello from Vercel!" });
-}
+// export default function handler(req, res) {
+//   res.status(200).json({ message: "Hello from Vercel!" });
+// }
 
