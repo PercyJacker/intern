@@ -6,13 +6,29 @@ const VerifyOTP = () => {
     const [email, setEmail] = useState('');
   const [showVerifyForm, setShowVerifyForm] = useState(false);
 
-  const handleRequestOTP = async (e) => {
+  // const handleRequestOTP = async (e) => {
+  //   e.preventDefault();
+  //   const backendURL = "https://intern-8hmo.vercel.app";
+  // axios.post('https://intern-8hmo.vercel.app/api/send-otp', { email })
+  // .then(response => console.log(response))
+  // .catch(error => console.error(error));
+  // };
+
+      const handleRequestOTP = async (e) => {
     e.preventDefault();
-    const backendURL = "https://intern-8hmo.vercel.app";
-  axios.post('https://intern-8hmo.vercel.app/api/send-otp', { email })
-  .then(response => console.log(response))
-  .catch(error => console.error(error));
+
+    try {
+      const response = await axios.post('https://intern-8hmo.vercel.app/api/send-otp', {
+        email,
+      });
+      alert(response.data); // Show success message
+      setShowVerifyForm(true); // Show the OTP verification form
+    } catch (err) {
+      console.error(err);
+      alert(err.response?.data || 'Error sending OTP');
+    }
   };
+
   return (
     <div>VerifyOTP
          {!showVerifyForm ? (
