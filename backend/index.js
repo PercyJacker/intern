@@ -313,7 +313,7 @@ module.exports.instance = new Razorpay({
     // app.listen(port, () => {
     //   console.log(`Server is running on port ${port}`);
     // })
-// export default function handler(req, res) {
-//   res.status(200).json({ message: "Hello from Vercel!" });
-// }
+export default function handler(req, res) {
+  res.status(200).json({ message: "Hello from Vercel!" });
+}
 
