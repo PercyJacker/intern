@@ -25,13 +25,8 @@ ffmpeg.setFfmpegPath(ffmpegPath);
 
 
 // Use the CORS middleware
-app.use(cors({
-    origin: 'https://intern-azure.vercel.app', // Allow only your frontend
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
-    preflightContinue: false, // Default behavior for OPTIONS requests
-    optionsSuccessStatus: 200 // Some legacy browsers may need a 200 response for preflight
-}));
+app.use(cors()); // Automatically sets CORS headers
+
 
 
 app.use(bodyParser.json({limit:"50mb"}))
