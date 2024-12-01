@@ -20,20 +20,20 @@ const VerifyOTP = () => {
   .catch(error => console.error(error));
   };
 
-      const handleRequestOTP = async (e) => {
-    e.preventDefault();
+  //     const handleRequestOTP = async (e) => {
+  //   e.preventDefault();
 
-    try {
-      const response = await axios.post('https://intern-8hmo.vercel.app/api/send-otp', {
-        email,
-      });
-      alert(response.data); // Show success message
-      setShowVerifyForm(true); // Show the OTP verification form
-    } catch (err) {
-      console.error(err);
-      alert(err.response?.data || 'Error sending OTP');
-    }
-  };
+  //   try {
+  //     const response = await axios.post('https://intern-8hmo.vercel.app/api/send-otp', {
+  //       email,
+  //     });
+  //     alert(response.data); // Show success message
+  //     setShowVerifyForm(true); // Show the OTP verification form
+  //   } catch (err) {
+  //     console.error(err);
+  //     alert(err.response?.data || 'Error sending OTP');
+  //   }
+  // };
 
   return (
     <div>VerifyOTP
