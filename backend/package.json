@@ -6,6 +6,8 @@
   "scripts": {
     "start": "nodemon index.js"
   },
+  "proxy": "https://intern-8hmo.vercel.app"
+
   "author": "ankit",
   "license": "ISC",
   "dependencies": {
