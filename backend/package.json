@@ -1,15 +1,12 @@
 {
   "name": "bakend",
   "version": "1.0.0",
-  "description": "this is a backend of internshala ",
+  "description": "this is a backend of internshala",
   "main": "index.js",
   "scripts": {
     "start": "node index.js", 
     "build": "cd frontend && npm run build"
-    
   },
- 
-
   "author": "ankit",
   "license": "ISC",
   "dependencies": {
