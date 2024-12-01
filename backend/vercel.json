@@ -8,11 +8,11 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)", // All API routes
+      "src": "/api/(.*)", 
       "dest": "/index.js"
     },
     {
-      "src": "/(.*)", // Frontend routes
+      "src": "/(.*)", 
       "dest": "/index.html"
     }
   ],
