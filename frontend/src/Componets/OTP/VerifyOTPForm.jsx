@@ -12,7 +12,7 @@ const VerifyOTPForm = ({email}) => {
       // const backendURL = "https://intern-8hmo.vercel.app/";
 
       try {
-        const response = await axios.post(`https://intern-a3y7.vercel.app/api/send-otp` ,{
+        const response = await axios.post(`https://intern-azure.vercel.app/api/send-otp` ,{
           email,
           otp,
         });
