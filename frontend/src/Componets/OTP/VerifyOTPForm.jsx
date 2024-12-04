@@ -21,7 +21,7 @@ const VerifyOTPForm = ({email}) => {
         // alert(response.data); // Show success message
         if (response.data.success) {
           alert('OTP Verified Successfully!');
-          navigate('/uploadvideo'); // Redirect to the upload video page
+          navigate('https://intern-a3y7.vercel.app/uploadvideo'); // Redirect to the upload video page
         } else {
           setError(response.data.message || 'Invalid OTP. Please try again.');
         }
