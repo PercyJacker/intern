@@ -73,7 +73,14 @@ const checkoutHandler = async (amount) => {
       const { data: { order } } = await axios.post(
         "https://intern-a3y7.vercel.app/api/checkout",
         { amount },
-        { headers: { 'Content-Type': 'application/json' } }
+        { headers: { 'Content-Type': 'application/json' } 
+        catch (error) {
+    console.error("Network error:", error.message);
+        if (error.response) {
+    console.error("Response status:", error.response.status);
+    console.error("Response data:", error.response.data);
+  }
+}}
       );
       console.log(order);
 
