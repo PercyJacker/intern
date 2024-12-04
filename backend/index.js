@@ -309,8 +309,11 @@ module.exports.instance = new Razorpay({
       }
     });
   })
-  app.get("/api/getkey",(req, res)=>res.status(200).json({key:process.env.API_KEY}))
-    module.exports = app;
+app.get("/api/getkey", (req, res) => {
+  res.status(200).json({ key: process.env.API_KEY });
+});   
+
+module.exports = app;
 
     // Start the server
 
