@@ -65,23 +65,17 @@ const Resume = () => {
   };
 const checkoutHandler = async (amount) => {
     try {
-        console.log('Amount passed to checkoutHandler:', amount); // Verify amount
+      console.log('Amount passed to checkoutHandler:', amount); // Verify amount
 
-        // Fetch the key from the API
-        const { data: { key } } = await axios.get(`https://intern-a3y7.vercel.app/api/getkey`);
-        console.log(key); // Log the key for debugging
+      const { data: { key } } = await axios.get(`https://intern-a3y7.vercel.app/api/getkey`);
+      console.log(key);
 
-        // Send a POST request to the checkout API with the amount
-        const { data: { order } } = await axios.post(
-            `https://intern-a3y7.vercel.app/api/checkout`, // Local server endpoint
-            { amount },                          // Request body
-            { headers: { 'Content-Type': 'application/json' } } // Headers
-        );
-        console.log(order); // Log the order for debugging
-    } catch (error) {
-        console.error('Error in checkoutHandler:', error.message); // Log the error
-    }
-};
+      const { data: { order } } = await axios.post(
+        `https://intern-a3y7.vercel.app/api/checkout`,
+        { amount },
+        { headers: { 'Content-Type': 'application/json' } }
+      );
+      console.log(order);
 
 
       const options = {
