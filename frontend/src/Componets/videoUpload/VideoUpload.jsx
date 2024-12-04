@@ -33,7 +33,7 @@ const VideoUpload = () => {
           const formData = new FormData();
           formData.append('video', file);
       
-          const response = await fetch('http://localhost:4000/api/uploadvideo', {
+          const response = await fetch('https://intern-a3y7.vercel.app/api/uploadvideo', {
             method: 'POST',
             body: formData,
           });
