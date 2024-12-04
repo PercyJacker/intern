@@ -67,11 +67,11 @@ const checkoutHandler = async (amount) => {
     try {
       console.log('Amount passed to checkoutHandler:', amount); // Verify amount
 
-      const { data: { key } } = await axios.get(`https://intern-a3y7.vercel.app/api/getkey`);
+      const { data: { key } } = await axios.get("https://intern-a3y7.vercel.app/api/getkey");
       console.log(key);
 
       const { data: { order } } = await axios.post(
-        `https://intern-a3y7.vercel.app/api/checkout`,
+        "https://intern-a3y7.vercel.app/api/checkout",
         { amount },
         { headers: { 'Content-Type': 'application/json' } }
       );
