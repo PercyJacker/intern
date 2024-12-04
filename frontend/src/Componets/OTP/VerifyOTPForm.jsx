@@ -9,10 +9,10 @@ const VerifyOTPForm = ({email}) => {
 
     const handleVerifyOTP = async (e) => {
       e.preventDefault();
-      const backendURL = "https://intern-8hmo.vercel.app/";
+      // const backendURL = "https://intern-8hmo.vercel.app/";
 
       try {
-        const response = await axios.post('https://intern-8hmo.vercel.app/api/send-otp' ,{
+        const response = await axios.post(`https://intern-a3y7.vercel.app/api/send-otp` ,{
           email,
           otp,
         });
