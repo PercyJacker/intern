@@ -317,7 +317,7 @@ app.get("/api/getkey", (req, res) => {
     }
 
     // Send the key in the response
-    res.status(200).json({ key: process.env.API_KEY });
+    res.status(200).json({ key: 'rzp_test_Deninu7Q3ty8Yq' });
   } catch (error) {
     console.error("Error in /api/getkey:", error.message);
 
