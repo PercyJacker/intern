@@ -68,7 +68,7 @@ const Resume = () => {
     try {
       console.log('Amount passed to checkoutHandler:', amount); // Verify amount
 
-      const { data: { key } } = await axios.get('http://localhost:4000/api/getkey');
+      const { data: { key } } = await axios.get(`https://intern-a3y7.vercel.app/api/getkey`);
       console.log(key);
 
       const { data: { order } } = await axios.post(
@@ -86,7 +86,7 @@ const Resume = () => {
         description: 'Test Transaction',
         image: 'https://example.com/your_logo',
         order_id: order.id, // This is a sample Order ID
-        callback_url: 'http://localhost:4000/api/paymentVerification',
+        callback_url: `https://intern-a3y7.vercel.app/api/paymentVerification`,
         prefill: {
           name: 'Gaurav Kumar',
           email: 'gaurav.kumar@example.com',
