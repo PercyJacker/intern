@@ -30,6 +30,7 @@ const corsOptions = {
   methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed methods
   credentials: true,  // If you want to allow cookies
 };
+app.use(cors(corsOptions));
 
 
 
