@@ -64,25 +64,20 @@ const Resume = () => {
     setIsPhotoLoaded(true); // Mark photo as loaded
   };
 const checkoutHandler = async (amount) => {
-    try {
-      console.log('Amount passed to checkoutHandler:', amount); // Verify amount
-
-      const { data: { key } } = await axios.get("https://intern-a3y7.vercel.app/api/getkey");
-      console.log(key);
-
+try {
+      console.log('Amount passed to checkoutHandler:', amount); // Debugging amount
+  
+      // Get API key
+      const { data: { key } } = await axios.get('https://intern-a3y7.vercel.app/api/getkey');
+      console.log('Fetched API Key:', key);
+  
+      // Create an order
       const { data: { order } } = await axios.post(
-        "https://intern-a3y7.vercel.app/api/checkout",
+        'https://intern-a3y7.vercel.app/api/checkout',
         { amount },
-        { headers: { 'Content-Type': 'application/json' } 
-        catch (error) {
-    console.error("Network error:", error.message);
-        if (error.response) {
-    console.error("Response status:", error.response.status);
-    console.error("Response data:", error.response.data);
-  }
-}}
+        { headers: { 'Content-Type': 'application/json' } }
       );
-      console.log(order);
+      console.log('Order created:', order);
 
 
       const options = {
