@@ -25,8 +25,11 @@ ffmpeg.setFfmpegPath(ffmpegPath);
 
 
 // Use the CORS middleware
-app.use(cors()); // Automatically sets CORS headers
-
+const corsOptions = {
+  origin: 'https://intern-azure.vercel.app/',  // Replace with your new origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed methods
+  credentials: true,  // If you want to allow cookies
+};
 
 
 
