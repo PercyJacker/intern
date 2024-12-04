@@ -311,20 +311,17 @@ module.exports.instance = new Razorpay({
   })
 app.get("/api/getkey", (req, res) => {
   try {
-    // Check if the API key exists in the environment
-    if (!process.env.API_KEY) {
-      throw new Error("API_KEY is not defined in environment variables.");
-    }
+    // Directly use the hardcoded key
+    const key = "rzp_test_Deninu7Q3ty8Yq";
 
-    // Send the key in the response
-    res.status(200).json({ key: 'rzp_test_Deninu7Q3ty8Yq' });
+    // Return the key as the response
+    res.status(200).json({ key });
   } catch (error) {
     console.error("Error in /api/getkey:", error.message);
-
-    // Send a generic error response to the client
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
 
 
 module.exports = app;
